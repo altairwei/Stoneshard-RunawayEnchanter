@@ -8,10 +8,80 @@ public static class Localization
     {
         Msl.InjectTableDialogLocalization(
             new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_intro",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "*神情明显慌张起来*......三手会的杂种？#...不是，那...嗝...没事别打扰我喝酒。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_pc_who",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "What do you do?"},
+                    {ModLanguage.Chinese, "你是做什么的？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_intro_2",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "做什么的？嗝...魔法师，嗯，就这样..."}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_pc_whatmagic",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "你会什么魔法？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_intro_3",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "*瞟了你一眼*#你看着像个雇佣兵，我会些能加强装备的魔法。#你如果能掏点钱，我可以给你更准更强的附魔。这事儿，市面上的附魔卷轴可做不到。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_pc_welldone",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "那可真不错。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_pc_who",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "你是谁？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_gretting1",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "铛铛铛，两种魔法碰在一起...哦...是你啊。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_gretting2",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "在这躲着...嗝...也不是个事啊......"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_gretting3",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "什么天火...骸骨...嗝...不如一瓶白兰地来的实在！"}
+                }
+            ),
+            new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "What can I do for you?"},
-                    {ModLanguage.Chinese, "敢问有何贵干？"}
+                    {ModLanguage.Chinese, "嗝...有事吗？"}
                 }
             ),
             new LocalizationSentence(

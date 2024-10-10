@@ -32,6 +32,6 @@ gold_k = irandom_range(100, 300)
 chat = false
 rumors = false
 dialog_id = de2_dialog_open("runaway_enchanter.de2")
-topic = "topicHub"
+topic = "topicIntro"
 event_user_number = 11
 place = "tavern"

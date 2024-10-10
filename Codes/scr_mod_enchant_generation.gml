@@ -1,6 +1,8 @@
 function scr_mod_enchant_generation()
 {
-    var _enchant_key = argument0
+    var _enchant_keys = array_create(0)
+    for (var i = 0; i < argument_count; i++)
+        array_push(_enchant_keys, argument[i])
 
     var name = scr_dsMapFindValue(data, "idName", "N/A")
     var dur = scr_dsMapFindValue(data, "Duration", noone)
@@ -96,33 +98,47 @@ function scr_mod_enchant_generation()
     ds_map_add(tech, string(Unique), make_colour_rgb(130, 72, 188))
     ds_map_add(tech, string(Treasure), make_colour_rgb(229, 193, 85))
 
-    quality = Uncommon
+    var _char_num = array_length(_enchant_keys)
+    for (var i = 0; i < _char_num; i++)
+    {
+        var _key = _enchant_keys[i]
 
-    // Find enchantment value
-    char = ds_map_find_value(effect, _enchant_key)
-    var X = random_range(5, 10)
-    var k_curse = 1
-    if (!__is_undefined(char))
-        char = ceil(char * k_curse)
-    else
-        char = ceil(X * k_curse)
+        // Find enchantment value
+        var _char = ds_map_find_value(effect, _key)
+        var X = random_range(5, 10)
+        var k_curse = 1
+        if (!__is_undefined(_char))
+            _char = ceil(_char * k_curse)
+        else
+            _char = ceil(X * k_curse)
 
-    var stat_name = _enchant_key
-    if (char >= 0)
-        var full_name = stat_name + " +" + string(char) + scr_atr_percent(stat_name)
-    else
-        full_name = stat_name + " " + string(char) + scr_atr_percent(stat_name)
-    ds_map_add(data, ("Char" + string(0)), full_name)
+        // Add enchantment text
+        var stat_name = _key
+        if (_char >= 0)
+            var full_name = stat_name + " +" + string(_char) + scr_atr_percent(stat_name)
+        else
+            full_name = stat_name + " " + string(_char) + scr_atr_percent(stat_name)
+        ds_map_add(data, ("Char" + string(i)), full_name)
 
-    // Add enchantment to item
-    var existValue = ds_map_find_value(data, _enchant_key)
-    if __is_undefined(existValue)
-        ds_map_add(data, string(_enchant_key), char)
-    else
-        ds_map_replace(data, string(_enchant_key), (real(char) + real(existValue)))
+        // Add enchantment to item
+        var existValue = ds_map_find_value(data, _key)
+        if __is_undefined(existValue)
+            ds_map_add(data, string(_key), _char)
+        else
+            ds_map_replace(data, string(_key), (real(_char) + real(existValue)))
+
+        
+        if (i == 0)
+            ds_map_add(data, "key", _key)
+    }
 
     // Add necessary properties
-    ds_map_add(data, "key", _enchant_key)
+
+    if (_char_num > 1)
+        quality = Rare
+    else
+        quality = Uncommon
+
     ds_map_add(data, "Suffix", (string(quality) + " " + type))
     ds_map_add(data, "Colour", ds_map_find_value(tech, string(quality)))
     ds_map_add(data, "LVL", LVL)

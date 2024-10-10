@@ -61,6 +61,7 @@ public class RunawayEnchanter : Mod
         o_npc_runaway_enchanter.ApplyEvent(ModFiles,
             new MslEvent("npc_runaway_enchanter_create_0.gml", EventType.Create, 0),
             new MslEvent("npc_runaway_enchanter_precreate_0.gml", EventType.PreCreate, 0),
+            new MslEvent("npc_runaway_enchanter_other_23.gml", EventType.Other, 23),
             new MslEvent("npc_runaway_enchanter_other_25.gml", EventType.Other, 25)
         );
 
