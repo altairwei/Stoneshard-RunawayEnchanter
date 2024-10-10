@@ -1,0 +1,2 @@
+scr_delete_item(o_inv_scroll_enchant)
+scr_gold_write_off(400)

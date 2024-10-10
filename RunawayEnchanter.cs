@@ -34,6 +34,21 @@ public class RunawayEnchanter : Mod
         s_npc_runaway_enchanter.GMS2PlaybackSpeed = 1;
         s_npc_runaway_enchanter.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerGameFrame;
 
+        UndertaleSprite s_npc_runaway_enchanter_sitting_idle = Msl.GetSprite("s_npc_runaway_enchanter_sitting_idle");
+        s_npc_runaway_enchanter_sitting_idle.CollisionMasks.RemoveAt(0);
+        s_npc_runaway_enchanter_sitting_idle.IsSpecialType = true;
+        s_npc_runaway_enchanter_sitting_idle.SVersion = 3;
+        s_npc_runaway_enchanter_sitting_idle.Width = 21;
+        s_npc_runaway_enchanter_sitting_idle.Height = 33;
+        s_npc_runaway_enchanter_sitting_idle.MarginLeft = 0;
+        s_npc_runaway_enchanter_sitting_idle.MarginRight = 20;
+        s_npc_runaway_enchanter_sitting_idle.MarginBottom = 32;
+        s_npc_runaway_enchanter_sitting_idle.MarginTop = 0;
+        s_npc_runaway_enchanter_sitting_idle.OriginX = 5;
+        s_npc_runaway_enchanter_sitting_idle.OriginY = 38;
+        s_npc_runaway_enchanter_sitting_idle.GMS2PlaybackSpeed = 0.3F;
+        s_npc_runaway_enchanter_sitting_idle.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerGameFrame;
+
         UndertaleGameObject o_npc_runaway_enchanter = Msl.AddObject(
             name: "o_npc_runaway_enchanter",
             spriteName: "s_npc_runaway_enchanter",
@@ -45,7 +60,8 @@ public class RunawayEnchanter : Mod
 
         o_npc_runaway_enchanter.ApplyEvent(ModFiles,
             new MslEvent("npc_runaway_enchanter_create_0.gml", EventType.Create, 0),
-            new MslEvent("npc_runaway_enchanter_precreate_0.gml", EventType.PreCreate, 0)
+            new MslEvent("npc_runaway_enchanter_precreate_0.gml", EventType.PreCreate, 0),
+            new MslEvent("npc_runaway_enchanter_other_25.gml", EventType.Other, 25)
         );
 
         // Add the NPC to the room
@@ -71,8 +87,42 @@ public class RunawayEnchanter : Mod
             x: 610, y: 455
         );
 
+        // Add a beer cup
+
+        UndertaleRoom.Layer LayerForegroundInstances = Msl.GetLayer(room, UndertaleRoom.LayerType.Instances, "ForegroundInstances");
+        UndertaleRoom.GameObject o_loot_marker = room.AddGameObject(
+            LayerForegroundInstances,
+            "o_loot_marker",
+            Msl.AddCode("chance = 100\nloot = choose(o_loot_mug)\nhasOwner = false", "gml_RoomCC_r_tavernWillow1floor_102_Create"),
+            x: 608, y: 426
+        );
+        o_loot_marker.ImageSpeed = 1;
+
+        // Add enchant skill
+        UndertaleGameObject o_skill_enchant_specify = Msl.AddObject(
+            name: "o_skill_enchant_specify",
+            spriteName: "sprite1",
+            parentName: "o_weapon_skills",
+            isVisible: true,
+            isAwake: true,
+            collisionShapeFlags: CollisionShapeFlags.Circle
+        );
+
+        // Add functions
+
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_enchant_specify.gml"), "scr_mod_enchant_specify");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_enchant_generation.gml"), "scr_mod_enchant_generation");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_can_enchant_item.gml"), "scr_mod_can_enchant_item");
+
+        o_skill_enchant_specify.ApplyEvent(ModFiles,
+            new MslEvent("gml_Object_o_skill_enchant_specify_Create_0.gml", EventType.Create, 0),
+            new MslEvent("gml_Object_o_skill_enchant_specify_Other_11.gml", EventType.Other, 11),
+            new MslEvent("gml_Object_o_skill_enchant_specify_Other_20.gml", EventType.Other, 20)
+        );
+
         // Add localization text
 
         Localization.PatchNames();
+        Localization.PatchDialogs();
     }
 }
