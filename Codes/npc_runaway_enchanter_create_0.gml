@@ -35,3 +35,4 @@ dialog_id = de2_dialog_open("runaway_enchanter.de2")
 topic = "topicIntro"
 event_user_number = 11
 place = "tavern"
+do_extra_enchantment = false

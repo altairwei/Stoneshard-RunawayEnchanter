@@ -92,10 +92,24 @@ public static class Localization
                 }
             ),
             new LocalizationSentence(
+                id: "mod_re_want_extra_enchantment",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "I want to add an extra enchantment to enchanted items. ~y~[700 crowns]~/~"},
+                    {ModLanguage.Chinese, "我想要为附魔物品追加额外附魔。~y~[700冠]~/~"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_want_to_enchant_pc_discount",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "I want to enchant an item. ~y~[200 crowns]~/~"},
+                    {ModLanguage.Chinese, "我想要为物品附魔。~y~[200冠]~/~"}
+                }
+            ),
+            new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_ask_which_metatype",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "What type of item do you want to enchant?"},
-                    {ModLanguage.Chinese, "你想为什么类型的物品附魔？"}
+                    {ModLanguage.Chinese, "什么类型的东西需要附魔？"}
                 }
             ),
             new LocalizationSentence(
@@ -116,7 +130,7 @@ public static class Localization
                 id: "mod_re_runaway_enchanter_ask_which_enchantment",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "Which attribute would you like to add to the item?"},
-                    {ModLanguage.Chinese, "你想为物品添加哪种属性？"}
+                    {ModLanguage.Chinese, "呵...想要什么样的附魔？"}
                 }
             ),
 

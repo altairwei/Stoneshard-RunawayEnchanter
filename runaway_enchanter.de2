@@ -50,13 +50,19 @@ topicHub
 topicHub
 mod_re_runaway_enchanter_gretting
 
-mod_re_want_to_enchant_pc/scr_mod_can_enchant_item
-
+mod_re_want_to_enchant_pc/scr_mod_can_enchant_item/0
+scr_mod_elm_do_extra_enchantment/false
+topic0
+mod_re_want_to_enchant_pc_discount/scr_mod_can_enchant_item/1
+scr_mod_elm_do_extra_enchantment/false
+topic0
+mod_re_want_extra_enchantment/scr_mod_can_extra_enchant_item
+scr_mod_elm_do_extra_enchantment/true
 topic0
 leave
 scr_close_dialog
 
-<de2_opt>354/307/16760832/300
+<de2_opt>354/305/16760832/300
 <topic_start>
 topic0
 mod_re_runaway_enchanter_ask_which_metatype

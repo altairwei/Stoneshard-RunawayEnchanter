@@ -114,12 +114,23 @@ public class RunawayEnchanter : Mod
         Msl.AddFunction(ModFiles.GetCode("scr_mod_enchant_specify.gml"), "scr_mod_enchant_specify");
         Msl.AddFunction(ModFiles.GetCode("scr_mod_enchant_generation.gml"), "scr_mod_enchant_generation");
         Msl.AddFunction(ModFiles.GetCode("scr_mod_can_enchant_item.gml"), "scr_mod_can_enchant_item");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_prison_note_opened.gml"), "scr_mod_prison_note_opened");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_elm_do_extra_enchantment.gml"), "scr_mod_elm_do_extra_enchantment");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_can_extra_enchant_item.gml"), "scr_mod_can_extra_enchant_item");
 
         o_skill_enchant_specify.ApplyEvent(ModFiles,
             new MslEvent("gml_Object_o_skill_enchant_specify_Create_0.gml", EventType.Create, 0),
             new MslEvent("gml_Object_o_skill_enchant_specify_Other_11.gml", EventType.Other, 11),
             new MslEvent("gml_Object_o_skill_enchant_specify_Other_20.gml", EventType.Other, 20)
         );
+
+        // About the story of Elm
+
+        Msl.LoadGML("gml_Object_o_inv_prison_note_Create_0")
+            .MatchAll()
+            .InsertBelow("script_after_close = gml_Script_scr_mod_prison_note_opened")
+            .Peek()
+            .Save();
 
         // Add localization text
 
