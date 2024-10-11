@@ -8,6 +8,13 @@ public static class Localization
     {
         Msl.InjectTableDialogLocalization(
             new LocalizationSentence(
+                id: "mod_re_pc_cancel",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Forget it, I've changed my mind."},
+                    {ModLanguage.Chinese, "算了，我改主意了。"}
+                }
+            ),
+            new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_intro",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, ""},
@@ -60,21 +67,21 @@ public static class Localization
                 id: "mod_re_runaway_enchanter_gretting1",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, ""},
-                    {ModLanguage.Chinese, "铛铛铛，两种魔法碰在一起...哦...是你啊。"}
+                    {ModLanguage.Chinese, "铛铛-铛，两种魔法碰在一起...噢-是你啊。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting2",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, ""},
-                    {ModLanguage.Chinese, "在这躲着...嗝...也不是个事啊......"}
+                    {ModLanguage.Chinese, "在这躲着...嗝...也不是个事-呵......"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting3",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, ""},
-                    {ModLanguage.Chinese, "什么天火...骸骨...嗝...不如一瓶白兰地来的实在！"}
+                    {ModLanguage.Chinese, "什么天火...骸骨-哦...嗝...不如一瓶白兰地来的实在！"}
                 }
             ),
             new LocalizationSentence(
@@ -96,6 +103,27 @@ public static class Localization
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "I want to add an extra enchantment to enchanted items. ~y~[700 crowns]~/~"},
                     {ModLanguage.Chinese, "我想要为附魔物品追加额外附魔。~y~[700冠]~/~"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_want_extra_enchantment_check_ruby",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "红宝石带了吗？二次附魔需要用到它。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_want_extra_enchantment_check_ruby_pc_1",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "我带了红宝石。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_want_extra_enchantment_check_ruby_pc_2",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "我忘了，那下次再说吧。"}
                 }
             ),
             new LocalizationSentence(
@@ -442,8 +470,162 @@ public static class Localization
                     {ModLanguage.English, "Healing Efficiency."},
                     {ModLanguage.Chinese, "治疗效果。"}
                 }
+            ),
+
+            // Miniquest
+            new LocalizationSentence(
+                id: "mod_re_intro_miniquest",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "有什么要你噶-干的？嗝...我的四肢每天有段时间会剧痛无比...很多精细的附魔活计都干不了。#我晚上还会受到...收-受到梦魇的影响...嗝...睡眠质量太差了，精力不足。#你要是能给我找到什么办法治治，那我可就谢天谢地了。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_miniquest_pc_aqua_vitae",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "你有试过葛文涅尔的灵药吗？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_intro_miniquest_aqua_vitae",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "葛文离-涅尔的灵药？当-然-当然试过...呵-很有效果...嗝...但它只能让我轻松一周，之后-后-毛病又会找上我...但这灵药难求-呃...有钱也买不到呵。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_intro_miniquest_pc_whattodo",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "那怎么办？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_intro_miniquest_artifacts",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "喔-我听说~y~涤罪圣杯~/~...嗝...~y~庇佑水器~/~...嚯-或者~y~蛇母雕像~/~能治疗我的病。要是能每天用一用这些文物...盛-呵-圣器！我可就解脱了..."}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_intro_miniquest_pc_what_rewards",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "要是帮了你这大忙，我能得到什么？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_intro_miniquest_extra_enchantment",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "哈哈...你..你想不想为附魔物品再附个魔，嗯？嘿嘿，我、我这身体啊，被病痛折腾得...唔，脑子都不管用了，没法专心干这事儿了..要、要是你能…嘿，想点儿什么办法，能让我…舒服点儿，我就…给你干活，行不？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_check_miniquest",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "哦？你...你找着啥了？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_miniquest_pc_found_gwynnel_elixir",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Gwynnel's Elixir."},
+                    {ModLanguage.Chinese, "葛文涅尔的灵药。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_miniquest_pc_found_cleansing_goblet",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Cleansing Chalice."},
+                    {ModLanguage.Chinese, "涤罪圣杯。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_miniquest_pc_found_blessed_aquamanile",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Blessed Aquamanile."},
+                    {ModLanguage.Chinese, "庇佑水器。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_miniquest_pc_found_snake_mother",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Foremother of Snakes Statuette."},
+                    {ModLanguage.Chinese, "蛇母雕像。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_miniquest_pc_regret",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "算了，我什么都还没找到。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_check_miniquest_gwynnel_elixir",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "哈哈...你、你居然找着了...一瓶灵药？快...快给我拿过来！#*一口把灵药喝下肚，神色马上轻松下来*#看来我能轻松一周了。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_intro_extra_enchantment",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "好了，你真是帮了我大忙！按照约定，我将为你提供二次附魔服务。但每次来的时候记得带一颗红宝石，这玩意儿是附魔的关键，挺紧俏的。此外，我还要收你~y~700冠~/~的材料和手工费。怎么样？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_check_miniquest_cleansing_goblet",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "天、天火啊！竟、竟然是那什么...涤、~y~涤罪圣杯~/~？你...你哪儿找来的？我听说..早、早就让人从...那个啥，至、至高圣会...偷走了啊。#快、快给我看看...让我...试试圣杯里的水，嘿嘿！#咕噜...咕噜...*神色完全轻松下来*#真不愧是圣器啊！我想我以后解脱了！"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_check_miniquest_blessed_aquamanile",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "骸、骸骨啊！这、这不是...~y~庇佑水器~/~吗？你、你居然能...找到这玩意儿！快...快拿给我...让我试试...水壶里的水，嘿嘿！#咕噜...咕噜...*神色完全轻松下来*#真不愧是圣器啊！我想我以后解脱了！"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_check_miniquest_snake_mother",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "你、你居然找到...蛇、~y~蛇母雕像~/~？这可是个...远古的宝贝啊！#快...快拿来，让我...向女神祈祷一下，嘿嘿！#*故作虔诚地向雕像朝拜，神色慢慢轻松下来*#我解脱了！以后我只信女神！"}
+                }
             )
         );
+    }
+
+    public static void PatchQeusts()
+    {
+        List<string> stringList = new List<string>();
+
+        string id = "mod_re_cure_elm";
+        string text_en = @"Cure Elm";
+        string text_zh = @"治疗埃尔姆";
+        stringList.Add($"{id};{text_en};{text_en};{text_zh};" + string.Concat(Enumerable.Repeat($"{text_en};", 9)));
+
+        id = "mod_re_find_artifacts";
+        text_en = @"Find elixirs or artifacts";
+        text_zh = @"寻找灵药或文物";
+        stringList.Add($"{id};{text_en};{text_en};{text_zh};" + string.Concat(Enumerable.Repeat($"{text_en};", 9)));
+
+        id = "mod_re_find_artifacts_desc";
+        text_en = @"Master Enchanter Elm experiences severe pains in his limbs for a period of time each day and is affected by nightmares at night, causing him to have less energy to perform his more masterful craft of enchanting. If you can find Gwynnel's Elixir, Cleansing Chalice, Blessed Aquamanile, or Foremother of Snakes Statuette and give it to him to use in treating his malady, he will provide you with secondary enchantment services for enchanted items.";
+        text_zh = @"附魔大师埃尔姆每天都有段时间会感到四肢剧痛，并且夜间会受到梦魇影响，导致他精力不济，无法施展更加精湛的附魔手艺。如果你能找到葛文涅尔的灵药、涤罪圣杯、庇佑水器或者蛇母雕像，并给他用于治疗病痛，他将为你提供武器装备的二次附魔服务。";
+        stringList.Add($"{id};{text_en};{text_en};{text_zh};" + string.Concat(Enumerable.Repeat($"{text_en};", 9)));
+
+        string questend = ";" + string.Concat(Enumerable.Repeat("text_end;", 12));
+
+        List<string> quest_table = ModLoader.GetTable("gml_GlobalScript_table_Quests_text");
+        quest_table.InsertRange(quest_table.IndexOf(questend), stringList);
+        ModLoader.SetTable(quest_table, "gml_GlobalScript_table_Quests_text");
     }
 
     public static void PatchNames()

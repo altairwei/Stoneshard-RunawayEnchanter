@@ -6,7 +6,7 @@ id_name = "npc_runaway_enchanter"
 occupation = "occultist"
 subtype = "townee"
 name = ds_map_find_value(global.npc_info, id_name)
-avatar = s_npc_SpecialDrunkard01d_P
+avatar = s_npc_runaway_enchanter_avatar
 ds_list_clear(myfloor_list)
 ds_list_add(myfloor_list, "H1", "H1", "H2", "H2")
 scr_create_skill_map("Discharge")

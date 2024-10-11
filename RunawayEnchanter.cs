@@ -117,6 +117,9 @@ public class RunawayEnchanter : Mod
         Msl.AddFunction(ModFiles.GetCode("scr_mod_prison_note_opened.gml"), "scr_mod_prison_note_opened");
         Msl.AddFunction(ModFiles.GetCode("scr_mod_elm_do_extra_enchantment.gml"), "scr_mod_elm_do_extra_enchantment");
         Msl.AddFunction(ModFiles.GetCode("scr_mod_can_extra_enchant_item.gml"), "scr_mod_can_extra_enchant_item");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_elm_miniquest.gml"), "scr_mod_elm_miniquest");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_re_gwynnel_elixir_effect.gml"), "scr_mod_re_gwynnel_elixir_effect");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_elm_take_artifact.gml"), "scr_mod_elm_take_artifact");
 
         o_skill_enchant_specify.ApplyEvent(ModFiles,
             new MslEvent("gml_Object_o_skill_enchant_specify_Create_0.gml", EventType.Create, 0),
@@ -132,9 +135,33 @@ public class RunawayEnchanter : Mod
             .Peek()
             .Save();
 
+        // Init the mini quest of backpack making (only works in a new game save)
+        Msl.LoadGML("gml_GlobalScript_scr_init_quests")
+            .MatchFrom("        scr_brynn_guild_init()")
+            .InsertAbove(@"        scr_quest_init(""mod_re_cure_elm"", """", [""mod_re_find_artifacts"", 1, ""mod_re_find_artifacts_desc"", []])")
+            .Save();
+
+        Msl.AddMenu(
+            "Runaway Enchanter",
+            new UIComponent(
+                name: "Press F1 to fix Elm's quest", associatedGlobal: "add_runaway_enchanter_miniquest",
+                UIComponentType.CheckBox, 0)
+        );
+
+        Msl.LoadGML("gml_Object_o_player_KeyPress_112") // F1
+            .MatchAll()
+            .InsertBelow(@"
+if (global.add_runaway_enchanter_miniquest)
+{
+    scr_quest_init(""mod_re_cure_elm"", """", [""mod_re_find_artifacts"", 1, ""mod_re_find_artifacts_desc"", []])
+    audio_play_sound(snd_quest_update, 3, 0)
+}")
+            .Save();
+
         // Add localization text
 
         Localization.PatchNames();
         Localization.PatchDialogs();
+        Localization.PatchQeusts();
     }
 }
