@@ -12,6 +12,7 @@ function scr_mod_enchant_generation()
     var _town = scr_dsMapFindValue(data, "Town", "N/A")
     var _stolen_days = scr_dsMapFindValue(data, "Stolen_Days", noone)
     var _stolen_days_stamp = scr_dsMapFindValue(data, "Stolen_Days_Timestamp", noone)
+    var _curse_eff = ds_list_find_value(ds_map_find_value(data, "Curse"), 1)
     __dsDebuggerMapDestroy(data)
 
     data = noone
@@ -98,6 +99,8 @@ function scr_mod_enchant_generation()
     ds_map_add(tech, string(Unique), make_colour_rgb(130, 72, 188))
     ds_map_add(tech, string(Treasure), make_colour_rgb(229, 193, 85))
 
+    // Apply specified enchantments to the item
+
     var _char_num = array_length(_enchant_keys)
     for (var i = 0; i < _char_num; i++)
     {
@@ -106,7 +109,12 @@ function scr_mod_enchant_generation()
         // Find enchantment value
         var _char = ds_map_find_value(effect, _key)
         var X = random_range(5, 10)
-        var k_curse = 1
+
+        if (!is_undefined(_curse_eff))
+            var k_curse = 1.3
+        else
+            k_curse = 1
+
         if (!__is_undefined(_char))
             _char = ceil(_char * k_curse)
         else
@@ -132,22 +140,48 @@ function scr_mod_enchant_generation()
             ds_map_add(data, "key", _key)
     }
 
-    // Add necessary properties
+    // Apply curse to the item
 
-    if (_char_num > 1)
-        quality = Rare
+    curse_list = __dsDebuggerListCreate()
+    if (is_undefined(_curse_eff))
+    {
+        if (_char_num > 1)
+            quality = Rare
+        else
+            quality = Uncommon
+        ds_map_add(data, "cursedQuality", noone)
+        ds_map_add_list(data, "Curse", curse_list)
+        ds_map_add(data, "is_cursed", false)
+    }
     else
-        quality = Uncommon
+    {
+        quality = Curse
+        if (_char_num > 1)
+            ds_map_add(data, "cursedQuality", Rare)
+        else
+            ds_map_add(data, "cursedQuality", Uncommon)
+
+        var _key = script_get_name(_curse_eff)
+        ds_list_add(curse_list, _key)
+        ds_list_add(curse_list, _curse_eff)
+        if instance_exists(o_player)
+        {
+            script_execute(_curse_eff)
+            scr_atr_calc(o_player)
+        }
+
+        ds_map_add(data, ds_list_find_value(curse_list, 2), ds_list_find_value(curse_list, 3))
+        ds_map_add_list(data, "Curse", curse_list)
+        ds_map_replace(data, "is_cursed", true)
+    }
+
+    // Add necessary properties
 
     ds_map_add(data, "Suffix", (string(quality) + " " + type))
     ds_map_add(data, "Colour", ds_map_find_value(tech, string(quality)))
     ds_map_add(data, "LVL", LVL)
     ds_map_add(data, "Num", num)
-    curse_list = __dsDebuggerListCreate()
-    ds_map_add(data, "cursedQuality", noone)
-    ds_map_add_list(data, "Curse", curse_list)
     ds_map_add(data, "quality", quality)
-    ds_map_add(data, "is_cursed", false)
 
     // Release memory
     __dsDebuggerMapDestroy(effect)

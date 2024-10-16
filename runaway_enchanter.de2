@@ -16,7 +16,7 @@ topic0
 mod_re_want_extra_enchantment_check_ruby_pc_2
 
 topicHub
-<de2_opt>384/17/16777215/300
+<de2_opt>365/-282/16777215/300
 <topic_start>
 topic13
 mod_re_check_miniquest_snake_mother
@@ -40,7 +40,7 @@ mod_re_runaway_enchanter_intro_3
 mod_re_runaway_enchanter_pc_welldone
 
 topicHub
-<de2_opt>195/-254/16777215/300
+<de2_opt>-41/-100/16777215/300
 <topic_start>
 topic3
 mod_re_runaway_enchanter_intro_2
@@ -48,7 +48,7 @@ mod_re_runaway_enchanter_intro_2
 mod_re_runaway_enchanter_pc_whatmagic
 scr_dialogue_complete/mod_re_runaway_enchanter_intro/1
 topic4
-<de2_opt>-165/-253/16777215/300
+<de2_opt>-399/-104/16777215/300
 <topic_start>
 topicIntro
 mod_re_runaway_enchanter_intro
@@ -56,7 +56,7 @@ mod_re_runaway_enchanter_intro
 mod_re_runaway_enchanter_pc_who
 
 topic3
-<de2_opt>-514/-249/8847218/300
+<de2_opt>-759/-107/8847218/300
 <topic_start>
 topicS3
 mod_re_runaway_enchanter_gretting3
@@ -114,10 +114,10 @@ topic1
 mod_re_runaway_enchanter_pc_armor_or_jewelry
 
 topic2
-leave
-scr_close_dialog
+mod_re_pc_cancel
 
-<de2_opt>786/-25/16777215/300
+topicHub
+<de2_opt>788/-292/16760832/300
 <topic_start>
 topic1
 mod_re_runaway_enchanter_ask_which_enchantment
@@ -200,10 +200,10 @@ scr_mod_enchant_specify/Weapon/Stun_Chance
 mod_re_enchantment_Weapon_Damage
 scr_mod_enchant_specify/Weapon/Weapon_Damage
 
-leave
-scr_close_dialog
+mod_re_pc_cancel
 
-<de2_opt>1243/-807/34047/440
+topic0
+<de2_opt>1242/-834/34047/440
 <topic_start>
 topic2
 mod_re_runaway_enchanter_ask_which_enchantment
@@ -265,10 +265,10 @@ scr_mod_enchant_specify/Armor/Fortitude
 mod_re_enchantment_Healing_Received
 scr_mod_enchant_specify/Armor/Healing_Received
 
-leave
-scr_close_dialog
+mod_re_pc_cancel
 
-<de2_opt>1244/85/16738940/440
+topic0
+<de2_opt>1244/46/16738940/440
 <topic_start>
 topic5
 mod_re_intro_miniquest

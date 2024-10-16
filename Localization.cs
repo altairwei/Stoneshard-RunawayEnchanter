@@ -598,6 +598,20 @@ public static class Localization
                     {ModLanguage.English, ""},
                     {ModLanguage.Chinese, "你、你居然找到...蛇、~y~蛇母雕像~/~？这可是个...远古的宝贝啊！#快...快拿来，让我...向女神祈祷一下，嘿嘿！#*故作虔诚地向雕像朝拜，神色慢慢轻松下来*#我解脱了！以后我只信女神！"}
                 }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_enchant_cursed_item_intro",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "你来了？多亏了你的福，最近埃欧科里搞出了什么诅咒卷轴。我也得到了灵感，搞清楚了如何处理诅咒物品中混乱的魔法力量。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_enchant_cursed_item_intro_2",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "你以后要是对诅咒装备有什么定制附魔的需求，也可以来找我。"}
+                }
             )
         );
     }

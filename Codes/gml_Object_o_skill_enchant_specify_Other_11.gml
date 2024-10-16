@@ -14,7 +14,7 @@ with (interact_id)
             var _key = ds_map_find_value(data, "key")
             scr_mod_enchant_generation(_key, other.enchant_key)
         }
-        
+
         if inmouse
         {
             scr_guiInteractiveEventPerform(id, 1)
