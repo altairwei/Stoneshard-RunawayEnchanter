@@ -85,6 +85,92 @@ public static class Localization
                 }
             ),
             new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_leave_gretting",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "我...我得走了...下、下次再聊啊...嗝..."}
+                }
+            ),
+
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_1_pc",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "你猜我找到了什么？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_1",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "哎哎，别、别卖...嗝...关子了，你就...你就直说吧！"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_2_pc",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "我偶然去到了废弃的教会监狱，找到了一些信件。你还记得指挥官列伊...唔..."}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_2",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "*神情惊恐，连忙捂住我的嘴*#别说了，我的老祖宗！算我求求你了！"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_3_pc",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "好...我不说了。可是，你怎么会被抓进...那个地方？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_3",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "这一时半会儿说不清楚，有机会再聊。你能帮我保守这个秘密吗？我好不容易逃出了那个地狱，不想再被三手会盯上了。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_4_pc",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "可以，那我有什么好处呢？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_4",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "以后你来我这附魔，我给你打五折怎么样？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_5_pc",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "这就把我打发了？那我可得嚷嚷几句了。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_5",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "别！我再给你~y~1000冠~/~，你千万别往外说！"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_secret_agreement_6_pc",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, ""},
+                    {ModLanguage.Chinese, "行，我会保守这个秘密。"}
+                }
+            ),
+
+            new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "What can I do for you?"},
@@ -99,10 +185,24 @@ public static class Localization
                 }
             ),
             new LocalizationSentence(
+                id: "mod_re_want_to_enchant_pc_discount",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "I want to enchant an item. ~y~[200 crowns]~/~"},
+                    {ModLanguage.Chinese, "我想要为物品附魔。~y~[200冠]~/~"}
+                }
+            ),
+            new LocalizationSentence(
                 id: "mod_re_want_extra_enchantment",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "I want to add an extra enchantment to enchanted items. ~y~[700 crowns]~/~"},
                     {ModLanguage.Chinese, "我想要为附魔物品追加额外附魔。~y~[700冠]~/~"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_want_extra_enchantment_discount",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "I want to add an extra enchantment to enchanted items. ~y~[350 crowns]~/~"},
+                    {ModLanguage.Chinese, "我想要为附魔物品追加额外附魔。~y~[350冠]~/~"}
                 }
             ),
             new LocalizationSentence(
@@ -124,13 +224,6 @@ public static class Localization
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, ""},
                     {ModLanguage.Chinese, "我忘了，那下次再说吧。"}
-                }
-            ),
-            new LocalizationSentence(
-                id: "mod_re_want_to_enchant_pc_discount",
-                sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "I want to enchant an item. ~y~[200 crowns]~/~"},
-                    {ModLanguage.Chinese, "我想要为物品附魔。~y~[200冠]~/~"}
                 }
             ),
             new LocalizationSentence(

@@ -120,6 +120,8 @@ public class RunawayEnchanter : Mod
         Msl.AddFunction(ModFiles.GetCode("scr_mod_elm_miniquest.gml"), "scr_mod_elm_miniquest");
         Msl.AddFunction(ModFiles.GetCode("scr_mod_re_gwynnel_elixir_effect.gml"), "scr_mod_re_gwynnel_elixir_effect");
         Msl.AddFunction(ModFiles.GetCode("scr_mod_elm_take_artifact.gml"), "scr_mod_elm_take_artifact");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_secret_agreement.gml"), "scr_mod_secret_agreement");
+        Msl.AddFunction(ModFiles.GetCode("scr_mod_can_talk_secret.gml"), "scr_mod_can_talk_secret");
 
         o_skill_enchant_specify.ApplyEvent(ModFiles,
             new MslEvent("gml_Object_o_skill_enchant_specify_Create_0.gml", EventType.Create, 0),

@@ -1,7 +1,23 @@
 function scr_mod_can_extra_enchant_item()
 {
-    if !scr_npc_check_gold(700)
-        return false
+    var _discount = argument[0]
+    if (_discount)
+    {
+        if scr_dialogue_uncomplete("mod_re_runaway_enchanter_secret_agreement")
+            return false
+
+        if !scr_npc_check_gold(350)
+            return false
+    }
+    else
+    {
+        if scr_dialogue_complete("mod_re_runaway_enchanter_secret_agreement")
+            return false
+
+        if !scr_npc_check_gold(700)
+            return false
+    }
+
 
     with (owner)
     {
