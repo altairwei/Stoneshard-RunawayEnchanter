@@ -17,7 +17,7 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_intro",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "*Looking visibly anxious* ...... A bastard of the Order?#... No, that... hic... never mind, don't interrupt me while I'm drinking."},
                     {ModLanguage.Chinese, "*神情明显慌张起来*......三手会的杂种？#...不是，那...嗝...没事别打扰我喝酒。"}
                 }
             ),
@@ -31,63 +31,63 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_intro_2",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "What do I do? hic... A magician, um, just like that..."},
                     {ModLanguage.Chinese, "做什么的？嗝...魔法师，嗯，就这样..."}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_pc_whatmagic",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "What kind of magic do you know?"},
                     {ModLanguage.Chinese, "你会什么魔法？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_intro_3",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "*Glances at you*#You look like a mercenary. I know some magic that can strengthen equipment.#If you can pay some crowns, I can give you a more precise and stronger enchantment. This is something that the enchantment scrolls on the market can't do."},
                     {ModLanguage.Chinese, "*瞟了你一眼*#你看着像个雇佣兵，我会些能加强装备的魔法。#你如果能掏点钱，我可以给你更准更强的附魔。这事儿，市面上的附魔卷轴可做不到。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_pc_welldone",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "That's great."},
                     {ModLanguage.Chinese, "那可真不错。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_pc_who",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Who are you?"},
                     {ModLanguage.Chinese, "你是谁？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting1",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Ding ding—ding, two kinds of magic colliding... Oh—it's you."},
                     {ModLanguage.Chinese, "铛铛-铛，两种魔法碰在一起...噢-是你啊。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting2",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Hiding here... hic... isn't exactly great—heh..."},
                     {ModLanguage.Chinese, "在这躲着...嗝...也不是个事-呵......"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting3",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "What Fires of Providence... skeletons—oh... hic... a bottle of brandy would be much better!"},
                     {ModLanguage.Chinese, "什么天火...骸骨-哦...嗝...不如一瓶白兰地来的实在！"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_leave_gretting",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "I... I have to go... let's talk next time, okay? hic..."},
                     {ModLanguage.Chinese, "我...我得走了...下、下次再聊啊...嗝..."}
                 }
             ),
@@ -95,77 +95,77 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_1_pc",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Guess what I found?"},
                     {ModLanguage.Chinese, "你猜我找到了什么？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_1",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Hey, hey, don't... hic... tease me, just... just say it!"},
                     {ModLanguage.Chinese, "哎哎，别、别卖...嗝...关子了，你就...你就直说吧！"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_2_pc",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "I happened to go to the abandoned Order's Prison and found some letters. You remember Commander Lei... Mff..."},
                     {ModLanguage.Chinese, "我偶然去到了废弃的教会监狱，找到了一些信件。你还记得指挥官列伊...唔..."}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_2",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "*Looking terrified, quickly covers my mouth*#Don't say that, my ancestor! I beg you!"},
                     {ModLanguage.Chinese, "*神情惊恐，连忙捂住我的嘴*#别说了，我的老祖宗！算我求求你了！"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_3_pc",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Well... I won't talk about it. But how did you get caught in... that place?"},
                     {ModLanguage.Chinese, "好...我不说了。可是，你怎么会被抓进...那个地方？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_3",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
-                    {ModLanguage.Chinese, "这一时半会儿说不清楚，有机会再聊。你能帮我保守这个秘密吗？我好不容易逃出了那个地狱，不想再被三手会盯上了。"}
+                    {ModLanguage.English, "It's not something I can explain right now; they want... forbidden knowledge... we can talk when there's a chance. Can you help me keep this secret? I barely escaped that hell and don't want to be targeted by the Order again."},
+                    {ModLanguage.Chinese, "这一时半会儿说不清楚，他们想要...禁忌之识...有机会再聊吧。你能帮我保守这个秘密吗？我好不容易逃出了那个地狱，不想再被三手会盯上了。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_4_pc",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Yes, I can. What's in it for me?"},
                     {ModLanguage.Chinese, "可以，那我有什么好处呢？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_4",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "When you come to me for enchantments, how about I give you a 50% discount?"},
                     {ModLanguage.Chinese, "以后你来我这附魔，我给你打五折怎么样？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_5_pc",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "And that's the end? Then I'll have to yell a few times."},
                     {ModLanguage.Chinese, "这就把我打发了？那我可得嚷嚷几句了。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_5",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Stop! I'll give you ~/~1000 crowns~/~, just don't tell anyone!"},
                     {ModLanguage.Chinese, "别！我再给你~y~1000冠~/~，你千万别往外说！"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_6_pc",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Okay, I'll keep it a secret."},
                     {ModLanguage.Chinese, "行，我会保守这个秘密。"}
                 }
             ),
@@ -173,7 +173,7 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "What can I do for you?"},
+                    {ModLanguage.English, "hic... Is there something?"},
                     {ModLanguage.Chinese, "嗝...有事吗？"}
                 }
             ),
@@ -208,21 +208,21 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_want_extra_enchantment_check_ruby",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Do you have the ruby? It's needed for the secondary enchantment."},
                     {ModLanguage.Chinese, "红宝石带了吗？二次附魔需要用到它。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_want_extra_enchantment_check_ruby_pc_1",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "I brought a ruby."},
                     {ModLanguage.Chinese, "我带了红宝石。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_want_extra_enchantment_check_ruby_pc_2",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "I forgot, so next time."},
                     {ModLanguage.Chinese, "我忘了，那下次再说吧。"}
                 }
             ),
@@ -250,7 +250,7 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_ask_which_enchantment",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "Which attribute would you like to add to the item?"},
+                    {ModLanguage.English, "Heh... Which attribute would you like to add to the item?"},
                     {ModLanguage.Chinese, "呵...想要什么样的附魔？"}
                 }
             ),
@@ -569,56 +569,56 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_intro_miniquest",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Is there something you need to do? hic... My limbs are in excruciating pain for a while every day... I can't handle many delicate enchantment tasks.#At night, I'm also uff-affected by... nightmares... hic... my sleep quality is terrible, and I'm low on energy.#If you can find a way to treat this, I'd be eternally grateful."},
                     {ModLanguage.Chinese, "有什么要你噶-干的？嗝...我的四肢每天有段时间会剧痛无比...很多精细的附魔活计都干不了。#我晚上还会受到...收-受到梦魇的影响...嗝...睡眠质量太差了，精力不足。#你要是能给我找到什么办法治治，那我可就谢天谢地了。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_miniquest_pc_aqua_vitae",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Have you tried Gwynnel's Elixir?"},
                     {ModLanguage.Chinese, "你有试过葛文涅尔的灵药吗？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_intro_miniquest_aqua_vitae",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "The Gavenli-Ner Elixir? Of-af course, I've tried it... heh—it's quite effective... hic... but it only lets me feel good for a week, and then... the problem returns... but this potion is hard to come by—uh... even if you have money, you can't buy it."},
                     {ModLanguage.Chinese, "葛文离-涅尔的灵药？当-然-当然试过...呵-很有效果...嗝...但它只能让我轻松一周，之后-后-毛病又会找上我...但这灵药难求-呃...有钱也买不到呵。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_intro_miniquest_pc_whattodo",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "What then?"},
                     {ModLanguage.Chinese, "那怎么办？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_intro_miniquest_artifacts",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Oh, I've heard that the ~y~Cleansing Chalice~/~... hic... the ~y~Blessed Aquamanile~/~... or the ~y~Foremother of Snakes Statuette~/~ can cure my illness. If I could use these artifacts every day... the holy relics! I'd be free..."},
                     {ModLanguage.Chinese, "喔-我听说~y~涤罪圣杯~/~...嗝...~y~庇佑水器~/~...嚯-或者~y~蛇母雕像~/~能治疗我的病。要是能每天用一用这些文物...盛-呵-圣器！我可就解脱了..."}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_intro_miniquest_pc_what_rewards",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "What do I get if I do you this big favour?"},
                     {ModLanguage.Chinese, "要是帮了你这大忙，我能得到什么？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_intro_miniquest_extra_enchantment",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Haha... do you want to add another enchantment to an enchanted item, hmm? Hehe, my body has been tormented by pain... uh, my brain isn't working, I can't focus on this... If you could... hey, think of some way to make me feel... a bit better, I'd... do some work for you, alright?"},
                     {ModLanguage.Chinese, "哈哈...你..你想不想为附魔物品再附个魔，嗯？嘿嘿，我、我这身体啊，被病痛折腾得...唔，脑子都不管用了，没法专心干这事儿了..要、要是你能…嘿，想点儿什么办法，能让我…舒服点儿，我就…给你干活，行不？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_check_miniquest",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Oh? What did yoo-you find?"},
                     {ModLanguage.Chinese, "哦？你...你找着啥了？"}
                 }
             ),
@@ -653,56 +653,56 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_miniquest_pc_regret",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Never mind, I haven't found anything yet."},
                     {ModLanguage.Chinese, "算了，我什么都还没找到。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_check_miniquest_gwynnel_elixir",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Haha... you actually found... a elixir? Quick... quick, bring it to me!#*Drinks the elixir in one gulp, instantly relaxing*#Looks like I'll be at ease for a week now."},
                     {ModLanguage.Chinese, "哈哈...你、你居然找着了...一瓶灵药？快...快给我拿过来！#*一口把灵药喝下肚，神色马上轻松下来*#看来我能轻松一周了。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_intro_extra_enchantment",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Alright, you've really helped me a lot! As agreed, I will provide you with secondary enchantment services. But remember to bring a ruby every time you come; it's essential for the enchantment and quite rare. Also, I'll need to charge you ~y~700 crowns~/~ for materials and labor. How does that sound?"},
                     {ModLanguage.Chinese, "好了，你真是帮了我大忙！按照约定，我将为你提供二次附魔服务。但每次来的时候记得带一颗红宝石，这玩意儿是附魔的关键，挺紧俏的。此外，我还要收你~y~700冠~/~的材料和手工费。怎么样？"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_check_miniquest_cleansing_goblet",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Oh, Fires of Providence! Is that... the ~y~Cleansing Chalice~/~? Where did you find it? I heard it was... stolen long ago from... that place, the High Hieron.#Quick, quick, let me see it... I want to... try the water in the grail, hehe!#Glug... glug... *Looks completely relaxed*#Truly a holy relic! I think I'll be free from now on!"},
                     {ModLanguage.Chinese, "天、天火啊！竟、竟然是那什么...涤、~y~涤罪圣杯~/~？你...你哪儿找来的？我听说..早、早就让人从...那个啥，至、至高圣会...偷走了啊。#快、快给我看看...让我...试试圣杯里的水，嘿嘿！#咕噜...咕噜...*神色完全轻松下来*#真不愧是圣器啊！我想我以后解脱了！"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_check_miniquest_blessed_aquamanile",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "Oh, Skeleton! Isn't this... the ~y~Blessed Aquamanile~/~? You actually found this thing! Quick... quick, give it to me... let me try... the water in the vessel, hehe!#Glug... glug... *Looks completely relaxed*#Truly a holy relic! I think I'll be free from now on!"},
                     {ModLanguage.Chinese, "骸、骸骨啊！这、这不是...~y~庇佑水器~/~吗？你、你居然能...找到这玩意儿！快...快拿给我...让我试试...水壶里的水，嘿嘿！#咕噜...咕噜...*神色完全轻松下来*#真不愧是圣器啊！我想我以后解脱了！"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_check_miniquest_snake_mother",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "You found... the ~y~Foremother of Snakes Statuette~/~? This is... an ancient treasure!#Quick... quick, bring it to me so I can... pray to the goddess, hehe!#*Pretends to worship the statue, slowly looking relaxed*#I'm free! From now on, I only believe in the goddess!"},
                     {ModLanguage.Chinese, "你、你居然找到...蛇、~y~蛇母雕像~/~？这可是个...远古的宝贝啊！#快...快拿来，让我...向女神祈祷一下，嘿嘿！#*故作虔诚地向雕像朝拜，神色慢慢轻松下来*#我解脱了！以后我只信女神！"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_enchant_cursed_item_intro",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "You're here? Thanks to you, l'Owcrey have recently created some cursed scrolls. I also got inspired and figured out how to handle the chaotic magical powers in cursed items."},
                     {ModLanguage.Chinese, "你来了？多亏了你的福，最近埃欧科里搞出了什么诅咒卷轴。我也得到了灵感，搞清楚了如何处理诅咒物品中混乱的魔法力量。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_enchant_cursed_item_intro_2",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, ""},
+                    {ModLanguage.English, "If you have any needs for custom enchantments on cursed equipment in the future, feel free to come to me."},
                     {ModLanguage.Chinese, "你以后要是对诅咒装备有什么定制附魔的需求，也可以来找我。"}
                 }
             )
