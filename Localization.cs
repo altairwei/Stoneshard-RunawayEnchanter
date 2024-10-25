@@ -66,21 +66,21 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting1",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "Ding ding—ding, two kinds of magic colliding... Oh—it's you."},
+                    {ModLanguage.English, "Ding ding-ding, two kinds of magic colliding... Oh-it's you."},
                     {ModLanguage.Chinese, "铛铛-铛，两种魔法碰在一起...噢-是你啊。"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting2",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "Hiding here... hic... isn't exactly great—heh..."},
+                    {ModLanguage.English, "Hiding here... hic... isn't exactly great-heh..."},
                     {ModLanguage.Chinese, "在这躲着...嗝...也不是个事-呵......"}
                 }
             ),
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_gretting3",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "What Fires of Providence... skeletons—oh... hic... a bottle of brandy would be much better!"},
+                    {ModLanguage.English, "What Fires of Providence... skeletons-oh... hic... a bottle of brandy would be much better!"},
                     {ModLanguage.Chinese, "什么天火...骸骨-哦...嗝...不如一瓶白兰地来的实在！"}
                 }
             ),
@@ -583,7 +583,7 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_intro_miniquest_aqua_vitae",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "The Gavenli-Ner Elixir? Of-af course, I've tried it... heh—it's quite effective... hic... but it only lets me feel good for a week, and then... the problem returns... but this potion is hard to come by—uh... even if you have money, you can't buy it."},
+                    {ModLanguage.English, "The Gavenli-Ner Elixir? Of-af course, I've tried it... heh-it's quite effective... hic... but it only lets me feel good for a week, and then... the problem returns... but this potion is hard to come by-uh... even if you have money, you can't buy it."},
                     {ModLanguage.Chinese, "葛文离-涅尔的灵药？当-然-当然试过...呵-很有效果...嗝...但它只能让我轻松一周，之后-后-毛病又会找上我...但这灵药难求-呃...有钱也买不到呵。"}
                 }
             ),
