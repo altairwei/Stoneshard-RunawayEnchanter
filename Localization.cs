@@ -737,14 +737,27 @@ public static class Localization
 
     public static void PatchNames()
     {
-        Msl.InjectTableOccupationNamesLocalization(
-            new LocalizationOccupationName(
-                id: "npc_runaway_enchanter",
-                name: new Dictionary<ModLanguage, string>{
-                    {ModLanguage.English, "Elm"},
-                    {ModLanguage.Chinese, "埃尔姆"}
-                }
-            )
-        );
+        // Msl.InjectTableOccupationNamesLocalization(
+        //     new LocalizationOccupationName(
+        //         id: "npc_runaway_enchanter",
+        //         name: new Dictionary<ModLanguage, string>{
+        //             {ModLanguage.English, "Elm"},
+        //             {ModLanguage.Chinese, "埃尔姆"}
+        //         }
+        //     )
+        // );
+
+        List<string> stringList = new List<string>();
+
+        string id = "npc_runaway_enchanter";
+        string text_en = "Elm";
+        string text_zh = "埃尔姆";
+        stringList.Add($"{id};{text_en};{text_en};{text_zh};" + string.Concat(Enumerable.Repeat($"{text_en};", 9)));
+
+        string npc_info_end = string.Concat(Enumerable.Repeat("NPC_info_end;", 13));
+
+        List<string> npcnames_table = ModLoader.GetTable("gml_GlobalScript_table_NPC_names");
+        npcnames_table.InsertRange(npcnames_table.IndexOf(npc_info_end), stringList);
+        ModLoader.SetTable(npcnames_table, "gml_GlobalScript_table_NPC_names");
     }
 }
