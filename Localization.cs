@@ -130,7 +130,7 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_runaway_enchanter_secret_agreement_3",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "It's not something I can explain right now; they want... forbidden knowledge... we can talk when there's a chance. Can you help me keep this secret? I barely escaped that hell and don't want to be targeted by the Order again."},
+                    {ModLanguage.English, "It's not something I can explain right now. They want... forbidden knowledge... we can talk when there's a chance. Can you help me keep this secret? I barely escaped that hell and don't want to be targeted by the Order again."},
                     {ModLanguage.Chinese, "这一时半会儿说不清楚，他们想要...禁忌之识...有机会再聊吧。你能帮我保守这个秘密吗？我好不容易逃出了那个地狱，不想再被三手会盯上了。"}
                 }
             ),
@@ -667,7 +667,7 @@ public static class Localization
             new LocalizationSentence(
                 id: "mod_re_intro_extra_enchantment",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "Alright, you've really helped me a lot! As agreed, I will provide you with secondary enchantment services. But remember to bring a ruby every time you come; it's essential for the enchantment and quite rare. Also, I'll need to charge you ~y~700 crowns~/~ for materials and labor. How does that sound?"},
+                    {ModLanguage.English, "Alright, you've really helped me a lot! As agreed, I will provide you with secondary enchantment services. But remember to bring a ruby every time you come. It's essential for the enchantment and quite rare. Also, I'll need to charge you ~y~700 crowns~/~ for materials and labor. How does that sound?"},
                     {ModLanguage.Chinese, "好了，你真是帮了我大忙！按照约定，我将为你提供二次附魔服务。但每次来的时候记得带一颗红宝石，这玩意儿是附魔的关键，挺紧俏的。此外，我还要收你~y~700冠~/~的材料和手工费。怎么样？"}
                 }
             ),
