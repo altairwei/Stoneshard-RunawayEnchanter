@@ -564,6 +564,13 @@ public static class Localization
                     {ModLanguage.Chinese, "治疗效果。"}
                 }
             ),
+            new LocalizationSentence(
+                id: "mod_re_enchantment_Bleeding_Resistance",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Bleed Resistance."},
+                    {ModLanguage.Chinese, "出血抗性。"}
+                }
+            ),
 
             // Miniquest
             new LocalizationSentence(
