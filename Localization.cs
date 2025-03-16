@@ -248,10 +248,17 @@ public static class Localization
                 }
             ),
             new LocalizationSentence(
-                id: "mod_re_runaway_enchanter_ask_which_enchantment",
+                id: "mod_re_runaway_enchanter_ask_which_enchantment_weapon",
                 sentence: new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "Heh... Which attribute would you like to add to the item?"},
-                    {ModLanguage.Chinese, "呵...想要什么样的附魔？"}
+                    {ModLanguage.English, "Weapon? Heh... Which attribute would you like to add to the item?"},
+                    {ModLanguage.Chinese, "兵器？呵...想要什么样的附魔？"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_runaway_enchanter_ask_which_enchantment_armor",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Armor? jewelry? Heh... Which attribute would you like to add to the item?"},
+                    {ModLanguage.Chinese, "防具？首饰？呵...想要什么样的附魔？"}
                 }
             ),
 
@@ -712,6 +719,14 @@ public static class Localization
                     {ModLanguage.English, "If you have any needs for custom enchantments on cursed equipment in the future, feel free to come to me."},
                     {ModLanguage.Chinese, "你以后要是对诅咒装备有什么定制附魔的需求，也可以来找我。"}
                 }
+            ),
+            
+            new LocalizationSentence(
+                id: "mod_re_nice_deal",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Deal."},
+                    {ModLanguage.Chinese, "行。"}
+                }
             )
         );
     }
@@ -737,9 +752,9 @@ public static class Localization
 
         string questend = ";" + string.Concat(Enumerable.Repeat("text_end;", 12));
 
-        List<string> quest_table = ModLoader.GetTable("gml_GlobalScript_table_Quests_text");
+        List<string> quest_table = ModLoader.GetTable("gml_GlobalScript_table_quests");
         quest_table.InsertRange(quest_table.IndexOf(questend), stringList);
-        ModLoader.SetTable(quest_table, "gml_GlobalScript_table_Quests_text");
+        ModLoader.SetTable(quest_table, "gml_GlobalScript_table_quests");
     }
 
     public static void PatchNames()
@@ -763,8 +778,8 @@ public static class Localization
 
         string npc_info_end = string.Concat(Enumerable.Repeat("NPC_info_end;", 13));
 
-        List<string> npcnames_table = ModLoader.GetTable("gml_GlobalScript_table_NPC_names");
+        List<string> npcnames_table = ModLoader.GetTable("gml_GlobalScript_table_names");
         npcnames_table.InsertRange(npcnames_table.IndexOf(npc_info_end), stringList);
-        ModLoader.SetTable(npcnames_table, "gml_GlobalScript_table_NPC_names");
+        ModLoader.SetTable(npcnames_table, "gml_GlobalScript_table_names");
     }
 }

@@ -30,6 +30,5 @@ function scr_mod_elm_miniquest()
         scr_quest_start("mod_re_cure_elm")
         scr_quest_set_progress("mod_re_cure_elm", "mod_re_find_artifacts", 0)
         scr_dialogue_complete("mod_re_intro_miniquest", true)
-        scr_close_dialog()
     }
 }

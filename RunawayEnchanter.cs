@@ -4,6 +4,7 @@
 
 using ModShardLauncher;
 using ModShardLauncher.Mods;
+using UndertaleModLib;
 using UndertaleModLib.Models;
 
 namespace RunawayEnchanter;
@@ -61,7 +62,7 @@ public class RunawayEnchanter : Mod
         o_npc_runaway_enchanter.ApplyEvent(ModFiles,
             new MslEvent("npc_runaway_enchanter_create_0.gml", EventType.Create, 0),
             new MslEvent("npc_runaway_enchanter_precreate_0.gml", EventType.PreCreate, 0),
-            new MslEvent("npc_runaway_enchanter_other_23.gml", EventType.Other, 23),
+            //new MslEvent("npc_runaway_enchanter_other_23.gml", EventType.Other, 23),
             new MslEvent("npc_runaway_enchanter_other_25.gml", EventType.Other, 25)
         );
 
@@ -134,13 +135,29 @@ public class RunawayEnchanter : Mod
         Msl.LoadGML("gml_Object_o_inv_prison_note_Create_0")
             .MatchAll()
             .InsertBelow("script_after_close = gml_Script_scr_mod_prison_note_opened")
-            .Peek()
             .Save();
 
-        // Init the mini quest of backpack making (only works in a new game save)
-        Msl.LoadGML("gml_GlobalScript_scr_init_quests")
-            .MatchFrom("        scr_brynn_guild_init()")
-            .InsertAbove(@"        scr_quest_init(""mod_re_cure_elm"", """", [""mod_re_find_artifacts"", 1, ""mod_re_find_artifacts_desc"", []])")
+        // Init the mini quest
+        Msl.LoadAssemblyAsString("gml_GlobalScript_scr_init_quests")
+            .MatchFromUntil("push.s \"fetchOrmond\"", "popz.v")
+            .InsertBelow(@"push.s ""mod_re_cure_elm""
+conv.s.v
+push.i gml_Script_QuestDefinition
+conv.i.v
+call.i @@NewGMLObject@@(argc=2)
+push.s ""mod_re_find_artifacts""
+conv.s.v
+dup.v 1 8
+dup.v 0
+push.v stacktop.Task
+callv.v 1
+push.s ""mod_re_find_artifacts_desc""
+conv.s.v
+dup.v 1 8
+dup.v 0
+push.v stacktop.SetDescription
+callv.v 1
+popz.v")
             .Save();
 
         Msl.AddMenu(
@@ -150,15 +167,29 @@ public class RunawayEnchanter : Mod
                 UIComponentType.CheckBox, 0)
         );
 
-        Msl.LoadGML("gml_Object_o_player_KeyPress_112") // F1
-            .MatchAll()
-            .InsertBelow(@"
-if (global.add_runaway_enchanter_miniquest)
-{
-    scr_quest_init(""mod_re_cure_elm"", """", [""mod_re_find_artifacts"", 1, ""mod_re_find_artifacts_desc"", []])
-    audio_play_sound(snd_quest_update, 3, 0)
-}")
+        Msl.LoadAssemblyAsString("gml_Object_o_player_KeyPress_112") // F1
+            .MatchFrom(":[end]")
+            .InsertAbove(ModFiles, "gml_Object_o_player_KeyPress_112.asm")
             .Save();
+
+        // Add dialog data
+
+        Msl.AddFunction("function runaway_enchanter_dialog_data()\n{\n}", "runaway_enchanter_dialog_data");
+        Msl.LoadGML("runaway_enchanter_dialog_data")
+            .MatchFromUntil("function runaway_enchanter_dialog_data", "{")
+            .InsertBelow(ModFiles, "runaway_enchanter_dialog_data.gml")
+            .Save();
+
+        UndertaleGameObject ob = Msl.AddObject("runaway_enchanter_initializer", isPersistent: true);
+        Msl.AddNewEvent(ob, "runaway_enchanter_dialog_data()", EventType.Create, 0);
+        UndertaleRoom start = Msl.GetRoom("START");
+        start.AddGameObject("Instances", ob);
+
+        // This allow GML struct syntax.
+        // Msl.LoadGML(Msl.EventName("runaway_enchanter_initializer", EventType.Create, 0))
+        //     .MatchAll()
+        //     .InsertAbove(ModFiles, "runaway_enchanter_dialog_data.gml")
+        //     .Save();
 
         // Add localization text
 
