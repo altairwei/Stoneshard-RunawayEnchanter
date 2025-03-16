@@ -2,6 +2,12 @@ function scr_mod_enchant_specify()
 {
     scr_close_dialog()
 
+    with (o_inventory)
+    {
+        if (!active)
+            event_user(0);
+    }
+
     with (owner)
     {
         with (instance_create_depth(x, y, 0, o_skill_enchant_specify))

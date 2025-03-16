@@ -9,7 +9,7 @@ global.DialogueData_val.runaway_enchanter =
         runaway_enchanter: "condition_CND_toLeave",
         condition_CND_toLeave: ["Cnd_ToLeave_positive", "Cnd_ToLeave_negative"],
         Cnd_ToLeave_positive: "mod_re_runaway_enchanter_leave_gretting",
-        mod_re_runaway_enchanter_leave_gretting: "leave",
+        mod_re_runaway_enchanter_leave_gretting: "@dialogue_end",
 
         // Introduction of first meet
         Cnd_ToLeave_negative: "condition_CND_firstMeet",
@@ -99,8 +99,8 @@ global.DialogueData_val.runaway_enchanter =
         mod_re_pc_cancel: "mod_re_runaway_enchanter_gretting",
         mod_re_runaway_enchanter_pc_weapon: "mod_re_runaway_enchanter_ask_which_enchantment_weapon",
         mod_re_runaway_enchanter_pc_armor_or_jewelry: "mod_re_runaway_enchanter_ask_which_enchantment_armor",
-        mod_re_runaway_enchanter_ask_which_enchantment_weapon: ["mod_re_pc_cancel"],
-        mod_re_runaway_enchanter_ask_which_enchantment_armor: ["mod_re_pc_cancel"],
+        mod_re_runaway_enchanter_ask_which_enchantment_weapon: [],
+        mod_re_runaway_enchanter_ask_which_enchantment_armor: [],
 
         // Extra enchant service
         Hub_extraEnchant: "instruction_INS_checkMoneyExtra",
@@ -334,4 +334,13 @@ global.DialogueData_val.runaway_enchanter =
     }
 }
 
+var _weapon_effs = [
+    "Lifesteal", "Manasteal", "Bleeding_Chance", "Daze_Chance", "Stun_Chance", "Knockback_Chance",
+    "Fire_Damage", "Frost_Damage", "Poison_Damage", "Shock_Damage", "Caustic_Damage", "Weapon_Damage",
+    "Armor_Damage", "Bodypart_Damage", "Magic_Power", "Skills_Energy_Cost", "Spells_Energy_Cost",
+    "Cooldown_Reduction", "PRR", "Block_Power", "CTA", "Hit_Chance", "CRT", "CRTD", "FMB", "Armor_Piercing"
+]
 
+var _Fragments = variable_struct_get(global.DialogueData_val.runaway_enchanter, "Fragments")
+var _Scripts = variable_struct_get(global.DialogueData_val.runaway_enchanter, "Scripts")
+var _Specs = variable_struct_get(global.DialogueData_val.runaway_enchanter, "Specs")

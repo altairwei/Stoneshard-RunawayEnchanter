@@ -35,6 +35,7 @@ public class RunawayEnchanter : Mod
         s_npc_runaway_enchanter.GMS2PlaybackSpeed = 1;
         s_npc_runaway_enchanter.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerGameFrame;
 
+        // FIXME: 貌似 z-axis 太高了？导致身体遮住 player 的武器。
         UndertaleSprite s_npc_runaway_enchanter_sitting_idle = Msl.GetSprite("s_npc_runaway_enchanter_sitting_idle");
         s_npc_runaway_enchanter_sitting_idle.CollisionMasks.RemoveAt(0);
         s_npc_runaway_enchanter_sitting_idle.IsSpecialType = true;
@@ -62,7 +63,6 @@ public class RunawayEnchanter : Mod
         o_npc_runaway_enchanter.ApplyEvent(ModFiles,
             new MslEvent("npc_runaway_enchanter_create_0.gml", EventType.Create, 0),
             new MslEvent("npc_runaway_enchanter_precreate_0.gml", EventType.PreCreate, 0),
-            //new MslEvent("npc_runaway_enchanter_other_23.gml", EventType.Other, 23),
             new MslEvent("npc_runaway_enchanter_other_25.gml", EventType.Other, 25)
         );
 
@@ -79,8 +79,11 @@ public class RunawayEnchanter : Mod
             x: 598, y: 442
         );
 
+        UndertaleRoom.GameObject entrance = Msl.ThrowIfNull(
+            LayerTarget.InstancesData.Instances.First(
+                t => t.ObjectDefinition.Name.Content == "o_NPC_target" && t.X == 728 && t.Y == 520));
         uint tagertID = o_NPC_target_runaway_enchanter.InstanceID;
-        string codeRunawayEnchanter = string.Format(@ModFiles.GetCode("taverninside_101_create.gml"), tagertID);
+        string codeRunawayEnchanter = string.Format(@ModFiles.GetCode("taverninside_101_create.gml"), tagertID, entrance.InstanceID);
 
         room.AddGameObject(
             LayerNPC, 
@@ -172,29 +175,81 @@ popz.v")
             .InsertAbove(ModFiles, "gml_Object_o_player_KeyPress_112.asm")
             .Save();
 
-        // Add dialog data
-
-        Msl.AddFunction("function runaway_enchanter_dialog_data()\n{\n}", "runaway_enchanter_dialog_data");
-        Msl.LoadGML("runaway_enchanter_dialog_data")
-            .MatchFromUntil("function runaway_enchanter_dialog_data", "{")
-            .InsertBelow(ModFiles, "runaway_enchanter_dialog_data.gml")
-            .Save();
-
-        UndertaleGameObject ob = Msl.AddObject("runaway_enchanter_initializer", isPersistent: true);
-        Msl.AddNewEvent(ob, "runaway_enchanter_dialog_data()", EventType.Create, 0);
-        UndertaleRoom start = Msl.GetRoom("START");
-        start.AddGameObject("Instances", ob);
-
-        // This allow GML struct syntax.
-        // Msl.LoadGML(Msl.EventName("runaway_enchanter_initializer", EventType.Create, 0))
-        //     .MatchAll()
-        //     .InsertAbove(ModFiles, "runaway_enchanter_dialog_data.gml")
-        //     .Save();
+        PatchDialogueData();
 
         // Add localization text
 
         Localization.PatchNames();
         Localization.PatchDialogs();
         Localization.PatchQeusts();
+    }
+
+    private void PatchDialogueData()
+    {
+        // Add dialog data
+        UndertaleGameObject ob = Msl.AddObject("runaway_enchanter_initializer", isPersistent: true);
+        Msl.AddNewEvent(ob, "", EventType.Create, 0);
+        UndertaleRoom start = Msl.GetRoom("START");
+        start.AddGameObject("Instances", ob);
+
+        string insertCodes = ModFiles.GetCode("runaway_enchanter_dialog_data.gml");
+
+        string[] _weapon_effs = {
+            "Lifesteal", "Manasteal", "Bleeding_Chance", "Daze_Chance", "Stun_Chance", "Knockback_Chance",
+            "Fire_Damage", "Frost_Damage", "Poison_Damage", "Shock_Damage", "Caustic_Damage", "Weapon_Damage",
+            "Armor_Damage", "Bodypart_Damage", "Magic_Power", "Skills_Energy_Cost", "Spells_Energy_Cost",
+            "Cooldown_Reduction", "PRR", "CTA", "Hit_Chance", "CRT", "CRTD", "FMB", "Armor_Piercing"
+        };
+
+        insertCodes += @$"
+array_push(_Fragments.mod_re_runaway_enchanter_ask_which_enchantment_weapon, ""mod_re_enchantment_weapon_Block_Power"")
+variable_struct_set(_Fragments, ""mod_re_enchantment_weapon_Block_Power"", ""instruction_INS_weapon_Block_Power"")
+variable_struct_set(_Fragments, ""instruction_INS_weapon_Block_Power"", ""@dialogue_end"")
+variable_struct_set(_Scripts, ""instruction_INS_weapon_Block_Power"", function() {{ scr_mod_enchant_specify(""Weapon"", ""Block_Power"") }})
+variable_struct_set(_Specs, ""instruction_INS_weapon_Block_Power"", {{ action: true }})";
+
+        foreach (string eff in _weapon_effs)
+        {
+            insertCodes += @$"
+array_push(_Fragments.mod_re_runaway_enchanter_ask_which_enchantment_weapon, ""mod_re_enchantment_{eff}"")
+variable_struct_set(_Fragments, ""mod_re_enchantment_{eff}"", ""instruction_INS_{eff}"")
+variable_struct_set(_Fragments, ""instruction_INS_{eff}"", ""@dialogue_end"")
+variable_struct_set(_Scripts, ""instruction_INS_{eff}"", function() {{ scr_mod_enchant_specify(""Weapon"", ""{eff}"") }})
+variable_struct_set(_Specs, ""instruction_INS_{eff}"", {{ action: true }})";
+        }
+
+        string[] _armor_effs = {
+            "HP", "MP", "Health_Restoration", "MP_Restoration", "EVS", "Fortitude", "Healing_Received",
+            "Slashing_Resistance", "Piercing_Resistance", "Blunt_Resistance", "Rending_Resistance", "Unholy_Resistance",
+            "Stun_Resistance", "Knockback_Resistance", "Bleeding_Resistance", "Physical_Resistance", "Nature_Resistance",
+            "Magic_Resistance", "Pain_Resistance"
+        };
+
+        insertCodes += @$"
+array_push(_Fragments.mod_re_runaway_enchanter_ask_which_enchantment_armor, ""mod_re_enchantment_armor_Block_Power"")
+variable_struct_set(_Fragments, ""mod_re_enchantment_armor_Block_Power"", ""instruction_INS_armor_Block_Power"")
+variable_struct_set(_Fragments, ""instruction_INS_armor_Block_Power"", ""@dialogue_end"")
+variable_struct_set(_Scripts, ""instruction_INS_armor_Block_Power"", function() {{ scr_mod_enchant_specify(""Armor"", ""Block_Power"") }})
+variable_struct_set(_Specs, ""instruction_INS_armor_Block_Power"", {{ action: true }})";
+
+        foreach (string eff in _armor_effs)
+        {
+            insertCodes += @$"
+array_push(_Fragments.mod_re_runaway_enchanter_ask_which_enchantment_armor, ""mod_re_enchantment_{eff}"")
+variable_struct_set(_Fragments, ""mod_re_enchantment_{eff}"", ""instruction_INS_{eff}"")
+variable_struct_set(_Fragments, ""instruction_INS_{eff}"", ""@dialogue_end"")
+variable_struct_set(_Scripts, ""instruction_INS_{eff}"", function() {{ scr_mod_enchant_specify(""Armor"", ""{eff}"") }})
+variable_struct_set(_Specs, ""instruction_INS_{eff}"", {{ action: true }})";
+        }
+
+        insertCodes += @"
+array_push(_Fragments.mod_re_runaway_enchanter_ask_which_enchantment_weapon, ""mod_re_pc_cancel"")
+array_push(_Fragments.mod_re_runaway_enchanter_ask_which_enchantment_armor, ""mod_re_pc_cancel"")";
+
+        // This allow GML struct syntax.
+        Msl.LoadGML(Msl.EventName("runaway_enchanter_initializer", EventType.Create, 0))
+            .MatchAll()
+            .InsertBelow(insertCodes)
+            .Save();
     }
 }

@@ -264,7 +264,14 @@ public static class Localization
 
             // Enchantments
             new LocalizationSentence(
-                id: "mod_re_enchantment_Block_Power",
+                id: "mod_re_enchantment_weapon_Block_Power",
+                sentence: new Dictionary<ModLanguage, string>() {
+                    {ModLanguage.English, "Block Power."},
+                    {ModLanguage.Chinese, "格挡力量。"}
+                }
+            ),
+            new LocalizationSentence(
+                id: "mod_re_enchantment_armor_Block_Power",
                 sentence: new Dictionary<ModLanguage, string>() {
                     {ModLanguage.English, "Block Power."},
                     {ModLanguage.Chinese, "格挡力量。"}
