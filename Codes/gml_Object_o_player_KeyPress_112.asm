@@ -30,7 +30,7 @@ pushi.e 0
 conv.i.v
 pushi.e 3
 conv.i.v
-pushi.e 1013
+pushi.e snd_quest_update
 conv.i.v
 call.i audio_play_sound(argc=3)
 popz.v

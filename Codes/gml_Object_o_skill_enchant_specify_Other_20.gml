@@ -1,7 +1,7 @@
 event_inherited()
 with (o_inv_slot)
 {
-    var _curse_enchant = scr_dialogue_complete("enchant_cursed_item_ready")
+    var _curse_enchant = scr_dialogue_complete("mod_re_enchant_cursed_item_intro")
     var _allowed_target = ds_map_find_value(data, "Metatype") == other.target_metatype
     var _is_your_item = owner.object_index != o_trade_inventory && is_weapon && _allowed_target && ds_map_find_value_ext(data, "identified", false)
     if (!other.do_extra_enchantment && _is_your_item && (!(ds_map_find_value_ext(data, "is_cursed", true))) && ds_map_find_value_ext(data, "quality", -4) != (6 << 0))
